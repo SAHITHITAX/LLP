@@ -56,8 +56,8 @@
     <h1>Rental Agreement Generator</h1>
     <div class="container">
         <form id="agreementForm">
-            <label for="ownerName">Owner's Name:</label>
-            <input type="text" id="ownerName" required>
+            <label for="LlpName">LLP Name:</label>
+            <input type="text" id="LlpName" required>
  	
 		<label for="father">Father's Name:</label>
             <input type="text" id="father" required>
@@ -157,13 +157,14 @@
 		<p style="text-align:center; text-decoration:underline;">[See rule 7 and 10(8)]</p>
   		<h3 style="text-align:center; text-decoration:underline;">CONSENT TO ACT AS DESIGNATED PARTNER</h3>
 
-                <p style="text-align:justify;">This Rental Agreement is made and executed on this day of <b>${new Date().toLocaleDateString()}</b>, at <b>${place}</b> and between:</p>
-
-                <p style="text-align:justify; margin: 35px; padding-left: 40px;"><b>Sri/Smt.${ownerName}</b>, S/o or D/o <b>${father}</b>, aged about <b>${age1}</b> years, Occupation  <b>${ownerDetails}</b>, R/o. ${owneradd}.</p>
-		
-
-		<p style="text-align:justify;">(Hereinafter called the <b>Owner ... Of First Party</b>)</p>
+             
+		<p style="text-align:justify;">To</p>
                 
+		<p style="text-align:justify;">${LlpName}</p>
+  
+		<p style="text-align:justify;">To</p>
+  
+		<p style="text-align:justify;">To</p>
 		<p style="text-align:center; text-decoration:underline;"><b>AND</b></p>
 
                 <p style="text-align:justify; margin: 35px ; padding-left: 40px;"><b>Sri/Smt.${tenantName}</b>, S/o or D/o <b>${fathert}</b>, aged about <b>${age2}</b> years, Occupation   <b>${tenantDetails}</b>,R/o. ${tadd}. authorized representative of <b>${businessName}</b>. </p>
