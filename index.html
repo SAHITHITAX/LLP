@@ -59,50 +59,6 @@
             <label for="p1">Partner1 Name:</label>
             <input type="text" id="p1" required>
  	
-	    <label for="p1f">Father's Name:</label>
-            <input type="text" id="p1f" required>
-
-	    <label for="age1">p1 age:</label>
-            <input type="text" id="age1" required>
-	   <label for="p1add">p1 Address:</label>
-            <input type="text" id="p1add" required>
-
-            <label for="p1occ">p1 occupation</label>
-            <input type="text" id="p1occ" required>
-
-            <label for="p2">p2 Name:</label>
-            <input type="text" id="p2" required>
-
-           
-	    <label for="p2f">Father's Name:</label>
-            <input type="text" id="p2f" required>
-
-		<label for="age2">p2 age:</label>
-            <input type="text" id="age2" required>
-	   <label for="p2add">p2 Address:</label>
-            <input type="text" id="p2add" required>
- 	    <label for="p2occ">p2  Occupation:</label>
-            <input type="text" id="p2occ" required>
-            <label for="businessName">Business Name (e.g., Sriyo Apparels):</label>
-            <input type="text" id="businessName" required>
-
-            <label for="propertyAddress">Property Address:</label>
-            <input type="text" id="propertyAddress" required>
-
-            <label for="cap">Capital:</label>
-            <input type="number" id="cap" required>
-
-            <label for="p1share">p1 share (?):</label>
-            <input type="number" id="p1share" required>
-            <label for="p2share">p2share (?):</label>
-            <input type="number" id="p2share" required> 
-            <label for="startDate">Lease Start Date:</label>
-            <input type="text" id="startDate" required>
-	    <label for="place">Place:</label>
-            <input type="text" id="place" required>	
-
-            <label for="leaseDuration">Lease Duration (Months):</label>
-            <input type="number" id="leaseDuration" required>
 
             
 
@@ -123,30 +79,11 @@
 
     function downloadAgreementAsWord() {
         const p1 = document.getElementById('p1').value;
-        const p1occ = document.getElementById('p1occ').value;
-        const p2 = document.getElementById('p2').value;
-        const p2occ = document.getElementById('p2occ').value;
-        const businessName = document.getElementById('businessName').value;
-        const propertyAddress = document.getElementById('propertyAddress').value;
-        const cap = document.getElementById('cap').value;
-        const p1share = document.getElementById('p1share').value;
-	const p2share = document.getElementById('p2share').value;
-	    
-	const startDate = document.getElementById('startDate').value;
+     
        
 
-        const leaseDuration = document.getElementById('leaseDuration').value;
-        
-	const place = document.getElementById('place').value;
-	const p1f= document.getElementById('p1f').value;
-	const p2f= document.getElementById('p2f').value;
-	const age1= document.getElementById('age1').value;
-	const age2= document.getElementById('age2').value;
-	const p1add= document.getElementById('p1add').value;
-	const p2add= document.getElementById('p2add').value;
-
         // Add 12 empty lines before content
-        const blankLines = "<p style='margin: 20px 0;'>&nbsp;</p>".repeat(10);
+        const blankLines = "<p style='margin: 20px 0;'>&nbsp;</p>".repeat(0);
 
         // Word-compatible HTML with formatting
         const agreementHTML = `
