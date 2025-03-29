@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> LLP CONSENT</title>
+    <title>Rental Agreement Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,12 +53,55 @@
 </head>
 <body>
 
-    <h1>LLP CONCENT</h1>
+    <h1>Rental Agreement Generator</h1>
     <div class="container">
         <form id="agreementForm">
-            <label for="p1">Partner1 Name:</label>
-            <input type="text" id="p1" required>
+            <label for="ownerName">Owner's Name:</label>
+            <input type="text" id="ownerName" required>
  	
+		<label for="father">Father's Name:</label>
+            <input type="text" id="father" required>
+
+		<label for="age1">Owner age:</label>
+            <input type="text" id="age1" required>
+	   <label for="owneradd">Owner Address:</label>
+            <input type="text" id="owneradd" required>
+
+            <label for="ownerDetails">Owner's Details (e.g., Occupation, Address):</label>
+            <input type="text" id="ownerDetails" required>
+
+            <label for="tenantName">Tenant's Name:</label>
+            <input type="text" id="tenantName" required>
+
+           
+	    <label for="fathert">Father's Name:</label>
+            <input type="text" id="fathert" required>
+
+		<label for="age2">Tenant age:</label>
+            <input type="text" id="age2" required>
+	   <label for="tadd">Tenant Address:</label>
+            <input type="text" id="tadd" required>
+ 		<label for="tenantDetails">Tenant's Details (e.g., Occupation, Address):</label>
+            <input type="text" id="tenantDetails" required>
+            <label for="businessName">Business Name (e.g., Sriyo Apparels):</label>
+            <input type="text" id="businessName" required>
+
+            <label for="propertyAddress">Property Address:</label>
+            <input type="text" id="propertyAddress" required>
+
+            <label for="monthlyRent">Monthly Rent (?):</label>
+            <input type="number" id="monthlyRent" required>
+
+            <label for="advanceAmount">Advance Amount (?):</label>
+            <input type="number" id="advanceAmount" required>
+
+            <label for="startDate">Lease Start Date:</label>
+            <input type="text" id="startDate" required>
+	    <label for="place">Place:</label>
+            <input type="text" id="place" required>	
+
+            <label for="leaseDuration">Lease Duration (Months):</label>
+            <input type="number" id="leaseDuration" required>
 
             
 
@@ -78,12 +121,29 @@
 
 
     function downloadAgreementAsWord() {
-        const p1 = document.getElementById('p1').value;
-     
+        const ownerName = document.getElementById('ownerName').value;
+        const ownerDetails = document.getElementById('ownerDetails').value;
+        const tenantName = document.getElementById('tenantName').value;
+        const tenantDetails = document.getElementById('tenantDetails').value;
+        const businessName = document.getElementById('businessName').value;
+        const propertyAddress = document.getElementById('propertyAddress').value;
+        const monthlyRent = document.getElementById('monthlyRent').value;
+        const advanceAmount = document.getElementById('advanceAmount').value;
+	const startDate = document.getElementById('startDate').value;
        
 
+        const leaseDuration = document.getElementById('leaseDuration').value;
+        
+	const place = document.getElementById('place').value;
+	const father= document.getElementById('father').value;
+	const fathert= document.getElementById('fathert').value;
+	const age1= document.getElementById('age1').value;
+	const age2= document.getElementById('age2').value;
+	const owneradd= document.getElementById('owneradd').value;
+	const tadd= document.getElementById('tadd').value;
+
         // Add 12 empty lines before content
-        const blankLines = "<p style='margin: 20px 0;'>&nbsp;</p>".repeat(0);
+        const blankLines = "<p style='margin: 20px 0;'>&nbsp;</p>".repeat(10);
 
         // Word-compatible HTML with formatting
         const agreementHTML = `
@@ -91,114 +151,51 @@
             <head><meta charset='UTF-8'></head>
             <body style="font-family:Calibri, sans-serif; font-size:12pt; line-height:1.6;">
 
-              
+                ${blankLines} <!-- 10 empty lines -->
 
-                 <h3 style="text-align:center; text-decoration:;">Form 9</h3>
-		 <h3 style="text-align:center; text-decoration:;">[See rule 7 and 10(8)]</h3>
-                 <h3 style="text-align:center; text-decoration:;">CONSENT TO ACT AS DESIGNATED PARTNER</h3>
+                <h3 style="text-align:center; text-decoration:underline;">RENTAL AGREEMENT</h3>
 
-        
+                <p style="text-align:justify;">This Rental Agreement is made and executed on this day of <b>${new Date().toLocaleDateString()}</b>, at <b>${place}</b> and between:</p>
 
-		<p style="text-align:justify;">To,</p>
+                <p style="text-align:justify; margin: 35px; padding-left: 40px;"><b>Sri/Smt.${ownerName}</b>, S/o or D/o <b>${father}</b>, aged about <b>${age1}</b> years, Occupation  <b>${ownerDetails}</b>, R/o. ${owneradd}.</p>
+		
+
+		<p style="text-align:justify;">(Hereinafter called the <b>Owner ... Of First Party</b>)</p>
                 
 		<p style="text-align:center; text-decoration:underline;"><b>AND</b></p>
 
-                <p style="text-align:justify; margin: 35px ; padding-left: 40px;"><b>Sri/Smt.${p2}</b>, S/o or D/o <b>${p2f}</b>, aged about <b>${age2}</b> years, Occupation   <b>${p2occ}</b>,R/o. ${p2add}. </p>
+                <p style="text-align:justify; margin: 35px ; padding-left: 40px;"><b>Sri/Smt.${tenantName}</b>, S/o or D/o <b>${fathert}</b>, aged about <b>${age2}</b> years, Occupation   <b>${tenantDetails}</b>,R/o. ${tadd}. authorized representative of <b>${businessName}</b>. </p>
 		
-		<p style="text-align:justify;">(Hereinafter called the SECOND PARTNER which term shall mean and include all his heirs, legal representatives, administrators, executors and assignees etc., of the SECOND PART).</p>
-   		 <p style="text-align:justify;">WHEREAS the above said parties have intended to carry on Business in the name and style 
-of "${businessName}", with the main object of carrying on the business of selling 
-clothing and fashion items directly and purchase apparel from manufacturers or wholesalers 
-and sell them in various retail formats—either physical stores, online platforms, or a 
-combination of both office at ${propertyAddress} and whereas the partners herein decided to reduce the 
-terms and conditions of the business in writing to avoid future misunderstandings. </p>            
+		<p style="text-align:justify;">(Hereinafter called the <b>Tenant ... Of Second Party</b>)</p>
+                
+		<p style="text-align:justify;margin: 15px 0; text-indent: 40px;">Whereas the First Party is the sole and absolute owner and possessor of the property situated at <b>${propertyAddress}.</b> </p>
+		<p style="text-align:justify;" > (Hereinafter called the <b>Schedule of Property</b>).</p>
+                <p style="text-align:justify;margin: 15px 0; text-indent: 40px;">Whereas the Tenant has approached the First Party and requested to let out the above-said property for running their business under the name and style of <b>${businessName}</b>. First Party/Owner has agreed to let out the same on monthly rent basis and fixed the for which the First rent at the rate of <b>Rs.${monthlyRent}/-</b> per month on the following terms and conditions.</p>
 
-<p style="text-align:justify;"> NOW THIS PARTNERSHIP DEED WITNESSES AS FOLLOWS: - </p>            
-				
-  
-  
-  <ol style="text-align:justify;">
-    <li style="margin-bottom: 10px;">That the partners herein mutually agreed to be the partners of the firm which shall 
-be carried in the name and style of M/s.${businessName}.</li>
+                <h3 style="text-align:center;text-decoration:underline">NOW THIS AGREEMENT WITNESSETH AS FOLLOWS</h3>
 
-    <li style="margin-bottom: 10px;">That the partnership business shall commence with effect from <b>${new Date().toLocaleDateString()}</b> and will be continued for the period at will of the partners and it shall be 
-terminated at any time with their will. 
-2</li>
+               <ol style="text-align:justify;">
+    <li style="margin-bottom: 10px;">That the Second Party /Tenant has agreed to pay the rent at the rate of <b>Rs.${monthlyRent}/-</b> per month excluding the electricity & water consumption charges etc. to the above said scheduled premises to the First Party/Owner. The rent is payable on or before the 10th of every English calendar month.</li>
 
-    <li style="margin-bottom: 10px;">That the partnership business will be carried at premises of ${propertyAddress}</li>
+    <li style="margin-bottom: 10px;">That the Second Party/Tenant has deposited <b>Rs.${advanceAmount}/-</b> towards advance with the First Party/Owner, and the same shall be refundable at the time of vacating the said premises after deducting any arrears/damages, without carrying any interest, if any, to the Tenant.</li>
 
-    <li style="margin-bottom: 10px;">That the profit and losses of the Partnership shall be divided into following manner: 
-First Party :${p1share}% 
-Second Party : ${p2share}% 
-Whereas the First Partner invest a sum of Rs.${p1share}/-, and the Second Partner invest 
-a sum of Rs.${p2share}/- i.e. total investment is Rs.${cap}/-.
-</li>
+    <li style="margin-bottom: 10px;">That the Tenancy shall commence from <b>${startDate}</b>, and this agreement shall be valid for (<b>${leaseDuration}</b>) months. After completion of (<b>${leaseDuration}</b>) months, the same shall be renewed for a further period.</li>
 
-    <li style="margin-bottom: 10px;"> That the nature of the partnership business shall be carrying on the business of 
-selling clothing and fashion items directly and purchase apparel from 
-manufacturers or wholesalers and sell them in various retail formats—either 
-physical stores, online platforms, or a combination of both </li>
+    <li style="margin-bottom: 10px;">That the First Party/Owner has handed over the above said leased premises to the Tenant on <b>${startDate}</b>. The Tenant has agreed to obtain the necessary permissions from the concerned authorities to run the above said business.</li>
 
-    <li style="margin-bottom: 10px;">Whereas both partners are active members of the said Partnership Firm, and the 
-same partners are authorized to sign all the papers of the Firm and to appear and 
-represent the firm before the Government Authorities, Corporations, Banks and 
-other Financial Institutions and other Third Parties/Firms. </li>
+    <li style="margin-bottom: 10px;">That if the Second Party/Tenant fails to pay the rent for <b>two months</b> continuously, it shall amount to willful default, and he shall be liable for eviction.</li>
 
-    <li style="margin-bottom: 10px;">And both partners are authorized to submit quotations and other papers before the 
-authorities on behalf of the Partnership Firm. And both partners are also 
-empowered to execute all deeds and take decisions in the Matters of Partnership 
-Business and are also authorized to raise loans and offer partnership assets as 
-security. </li>
+    <li style="margin-bottom: 10px;">That the First Party/Owner has agreed to pay the property tax to the concerned authorities in respect of the leased premises.</li>
 
+    <li style="margin-bottom: 10px;">That the Second Party/Tenant shall not create any charge or mortgage on the leased premises with any financial institution/Bank, etc., under any circumstances.</li>
 
- <li style="margin-bottom: 10px;">The required capital for the Partnership business shall be contributed by the 
-Partners as per their share as decided by them from time to time and according to 
-the requirement of the business. </li>
+    <li style="margin-bottom: 10px;">That the Second Party shall not sub-lease the leased premises to any third party and shall not construct any permanent structures or dig any pits, etc., in the leased premises without the consent of the First Party/Owner.</li>
 
+    <li style="margin-bottom: 10px;">That the First Party/Owner is at liberty to visit and inspect the leased premises at all reasonable times, for which the Second Party shall not have any objection.</li>
 
- <li style="margin-bottom: 10px;">The bank account shall be opened in the name of the Partnership Firm in any 
-nationalized banks/co-op Banks or any other private banks, and the same shall be 
-operated by both partners are and all Cheques, and other transactions of the bank 
-account will be operated by both partners. </li>
+    <li style="margin-bottom: 10px;">At the time of vacating the premises, the Second Party/Tenant shall hand over the vacant and physical possession of the scheduled property as it is to the First Party/Owner.</li>
 
- <li style="margin-bottom: 10px;">Regular accounts books of the Partnership business shall be maintained and the 
-same shall be kept at the place of business. </li>
-
-
- <li style="margin-bottom: 10px;">Regular accounts books of the Partnership business shall be maintained and the 
-same shall be kept at the place of business. </li>
-
- <li style="margin-bottom: 10px;">The accounting year of the partnership firm shall be decided by the partners from 
-time to time as per their convenience.  </li>
-
-
- <li style="margin-bottom: 10px;">If any partner desires to retire from the Partnership, he shall give a notice to the 
-other partner before 3 months. </li>
-
-
- <li style="margin-bottom: 10px;">No Partner shall be entitled to as for dissolution of Partnership. Should any partner 
-retire he is entitled for payment of capital and accumulated profits and no share in 
-value of assets or good will would be allowed to the retiring partner. 
- </li>
-
-
- <li style="margin-bottom: 10px;">Any dispute regarding interpretation and implementation of the Partnership and its 
-business, the same shall be referred to Arbitration as per the Law of Arbitration, and 
-the decision of the Arbitrator shall be binding on both Partner.  </li>
-
-
- <li style="margin-bottom: 10px;">Any matter not covered herein above, the same is governed by the provisions of the 
-Partnership Act. 
- </li>
-
-
-
-
-
-
-
-
-
+    <li style="margin-bottom: 10px;">That if the Second Party/Tenant intends to vacate the leased premises, he shall give (<b>2</b>) months' prior notice to the First Party. Similarly, if the First Party wishes to vacate the Second Party/Tenant, he shall give (<b>2</b>) months' prior notice to the Second Party.</li>
 </ol>
   <p style="text-align:justify;margin: 15px 0; text-indent: 40px;">IN WITNESESS WHEREOF both the parties have signed this Rental Agreement with their free will and consent without any force or coercion on the day, month and year aforesaid mentioned in presence of the following witnesses. </p>
 			<h3 style="text-align:justify;">WITNESSES:</h3>
@@ -206,11 +203,11 @@ Partnership Act.
                 <p>2. ______________________</p>
        
   <p style="text-align:right;">FIRST PARTY/OWNER</p>
- <p style="text-align:right;">(<b>${p1}</b>)</p>
+ <p style="text-align:right;">(<b>${ownerName}</b>)</p>
 
 <p style='margin: 20px 0;'>&nbsp;</p>
   <p style="text-align:right;">SECOND PARTY/TENANT</p>
- <p style="text-align:right;">(<b>${p2}</b>)</p>
+ <p style="text-align:right;">(<b>${tenantName}</b>)</p>
             </body>
             </html>
         `;
